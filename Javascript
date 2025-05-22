@@ -1,0 +1,67 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+ 
+
+<script>
+if (jQuery(window).width() > 1000)
+  document.addEventListener("DOMContentLoaded", function () {
+    const fullpageInstance = new fullpage("#fullpage", {
+      scrollingSpeed: 1000,
+      autoScrolling: true,
+      scrollHorizontally: true,
+      navigation: false,
+      onLeave: function (origin, destination, direction) {
+        const words = ["Unknown", "Unseen", "Unfamiliar", "Mystery"];
+        const leavingText = origin.item.querySelector("h1");
+        const enteringText = destination.item.querySelector("h1");
+        const line = destination.item.querySelector(".line");
+
+//sørger for videoer asfspilles ved sektionskift
+
+ const videosInDestination = destination.item.querySelectorAll("video");
+videosInDestination.forEach((video) => {
+  video.currentTime = 0;
+  video.play();
+});
+     
+     
+        //  animation
+        const newLineWidth = (destination.index + 1) * 150;
+        const currentLineWidth = (origin.index + 1) * 150;
+
+        if (direction === "down") {
+          gsap.to(line, {
+            width: newLineWidth + "px",
+            duration: 1.5,
+            ease: "power2.out",
+          });
+        } else {
+          gsap.to(line, {
+            width: currentLineWidth + "px",
+            duration: 1.5,
+            ease: "power2.out",
+          });
+        }
+      },
+    });
+
+    document.getElementById("link1").addEventListener("click", function () {
+      scrollToSection(1);
+    });
+    document.getElementById("link2").addEventListener("click", function () {
+      scrollToSection(2);
+    });
+    document.getElementById("link3").addEventListener("click", function () {
+      scrollToSection(3);
+    });
+    document.getElementById("link4").addEventListener("click", function () {
+      scrollToSection(4);
+    });
+
+    function scrollToSection(sectionIndex) {
+      fullpageInstance.moveTo(sectionIndex);
+    }
+  });
+</script>
