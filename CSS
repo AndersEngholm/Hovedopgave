@@ -1,0 +1,84 @@
+<style>
+
+.demo-sektion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  padding: 4rem 2rem;
+  padding-top: 12%;
+  background-color: #f5f7fc;
+  font-family: "Montserrat", sans-serif;
+  flex-wrap: wrap; /* Mobile responsive */
+}
+
+/* venstre content block */
+.demo-content {
+  max-width: 500px;
+  text-align: center;
+}
+
+.demo-content h2 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.demo-content .highlight {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d7efb;
+  margin-bottom: 1rem;
+}
+
+.demo-content p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.demo-content .underline {
+  color: #2d7efb;
+  font-weight: 600;
+}
+
+/* CTA */
+.demo-cta {
+  background-color: #f9a825;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.5em;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s;
+  display: inline-block;
+}
+
+.demo-cta:hover {
+  background-color: #267cff;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+
+/* Profil block */
+.demo-profil {
+  text-align: center;
+  position: relative;
+}
+
+.anthony img {
+  width: 500px;
+  border-radius: 20px;
+  object-fit: cover;
+  background-color: #267cff;
+}
+
+.navbar {
+    text-decoration: none;
+}
+
+</style>
